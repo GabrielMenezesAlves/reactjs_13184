@@ -6,12 +6,14 @@ class ButtonEvent extends React.Component {
         super(props);
         this.state =
         {
-            nr_clicks: 2
+            nr_clicks: 0
         };
+
+        this.click = this.click.bind(this);
     };
 
     click() {
-        this.setState({ nr_clicks: 1 })
+        this.setState({ nr_clicks: this.state.nr_clicks + 1 })
     }
 
     render() {
