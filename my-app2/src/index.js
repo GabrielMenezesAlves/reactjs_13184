@@ -4,12 +4,13 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 import Contador from './Contador';
 //import ButtonEvent from './ButtonEvent'
+import Atividade from './Atividade'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
   <div>
-    <Contador minimo={0} maximo={10} ></Contador>
+    <Atividade></Atividade>
   </div>
 )
 
