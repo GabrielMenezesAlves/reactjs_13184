@@ -9,7 +9,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
   <div>
-    <Contador></Contador>
+    <Contador minimo={0} maximo={10} ></Contador>
   </div>
 )
 
