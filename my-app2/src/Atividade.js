@@ -1,10 +1,12 @@
 import React, {useState} from "react";
 
 function Atividade(){
-    const [nomeAtividade, setnomeAtividade] = useState('')
-    
-    
-    const adicionar = () => {
+    const [Produto, setProduto] = useState('')
+    const [Valor, setValor] = useState('')
+    const [Descricao, setDescricao] = useState('')
+          
+    const salvar = () => {
+        console.log(Produto + " " + Valor + " " + Descricao)        
 
     }
     
@@ -12,14 +14,24 @@ function Atividade(){
         <>
             <input 
             type="text"
-            value={nomeAtividade}
-            onChange={(e) => setnomeAtividade(e.target.value)} 
-            laceholder="Digite o nome da atividade">
+            value={Produto}
+            onChange={(e) => setProduto(e.target.value)} 
+            placeholder="Digite o nome do produto!">
             </input>
-            <hr></hr>
-            <label>{nomeAtividade}</label>
-            <hr></hr>
-            <button onClick={adicionar}>Adicionar</button>
+            <input 
+            type="text"
+            value={Valor}
+            onChange={(e) => setValor(e.target.value)} 
+            placeholder="Digite o Valor do produto!">
+            </input>
+            <input 
+            type="text"
+            value={Descricao}
+            onChange={(e) => setDescricao(e.target.value)} 
+            placeholder="Digite a descricao do produto!">
+            </input>
+            <hr></hr>            
+            <button onClick={salvar}>Salvar</button>
         
         </>
     )
