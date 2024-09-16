@@ -2,8 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import Contador from './Contador';
-//import ButtonEvent from './ButtonEvent'
 import Atividade from './Atividade'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
