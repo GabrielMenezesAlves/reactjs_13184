@@ -1,10 +1,25 @@
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 
 function Atividade() {
     const [atividades, setAtividades] = useState([]);
     const [nomeAtividade, setNomeAtividade] = useState('');
+
+    useEffect(() => {
+
+        const dadosLocalStorage = JSON.parse(localStorage.getItem('atividades'));
+        if (dadosLocalStorage) {
+            setAtividades(dadosLocalStorage)
+        }
+
+    }, []);
+
+    useEffect(() => {
+
+        localStorage.setItem('atividades', JSON.stringify(atividades));
+
+    },[atividades]);
 
 
     const adicionar = () => {
