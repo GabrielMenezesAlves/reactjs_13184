@@ -3,13 +3,14 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 //import Atividade from './Atividade'
-import Produtos from './Produtos';
+//import Produtos from './Produtos';
+import Login from './login/Login';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
   <div>
-    <Produtos></Produtos>
+    <Login></Login>
   </div>
 )
 

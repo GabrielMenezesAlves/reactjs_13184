@@ -1,0 +1,7 @@
+
+
+1 - crie um componente para login de usuario com 2 campos ( login e senha ).
+
+2 - o componente deve validar o usuario e senha com os dados no localstorage.
+
+3 - exibir um alerta com o resultado da validacao ( login valido ou usuario/senha invalido ).
