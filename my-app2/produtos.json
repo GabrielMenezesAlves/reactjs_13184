@@ -1,0 +1,22 @@
+{
+  "produtos": [
+    {
+      "id": "1",
+      "nome": "Caneta",
+      "preco": "10",
+      "descricao": "Caneta para escrever em parede"
+    },
+    {
+      "id": "2",
+      "nome": "Mouse",
+      "preco": "20",
+      "descricao": "Mouse para xpto"
+    },
+    {
+      "id": "798a",
+      "nome": "Mesa",
+      "preco": "500",
+      "descricao": "dsfdffew"
+    }
+  ]
+}
