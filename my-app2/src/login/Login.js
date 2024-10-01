@@ -1,43 +1,37 @@
 
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+
 import './Login.css'
 
+import axios from "axios";
 
 
 function Login() {
     const [login, setLogin] = useState("")
     const [senha, setSenha] = useState("")
+    const [usuarios, setUsuarios] = useState([])
 
+    const navegacao = useNavigate();
+
+    const API_URL = "http://localhost:3001/usuarios"
 
     useEffect(() => {
-        console.log("Componente carregado!")
-
-        const usuarios = [
-            { login: "admin", senha: "123" },
-            { login: "ana", senha: "456" }
-        ]
-
-        localStorage.setItem("usuarios", JSON.stringify(usuarios))
-
+        axios.get(API_URL).
+            then((response) => {
+                setUsuarios(response.data)
+            }).
+            catch((error) => {
+                console.log(error)
+            })
     }, [])
 
-    //const estilo = {
-    //    container: {
-    //        backgroundColor: "#EB855E"
-    //    },
-    //    item:{
-    //        backgroundColor: "#252525"
-    //    }
-    //}
-
-
     const logar = () => {
-        const usuarios = JSON.parse(localStorage.getItem("usuarios"))
 
         const usuario = usuarios.find((usuario) => usuario.login === login && usuario.senha === senha)
 
         if (usuario) {
-            alert("Login válido!")
+            navegacao('/produtos')    
         }
         else {
             alert("Usuário/senha inválidos!")
@@ -45,11 +39,12 @@ function Login() {
     }
 
     return (
-        <div className="container" >
+        <div className="container-login" >
             <div className="login-box">
                 <h2>Login</h2>
-                <div className="input-group">
+                <div className="input-group" >
                     <input
+                        id="txtLogin"
                         type="text"
                         placeholder="Informe o usuário"
                         value={login}
@@ -64,7 +59,7 @@ function Login() {
                         onChange={(e) => setSenha(e.target.value)}>
                     </input>
                 </div>
-                <button onClick={logar}>Logar</button>
+                <button className="input-group" onClick={logar}>Logar</button>
             </div>
         </div>
 
